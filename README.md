@@ -1,212 +1,90 @@
-# 🧾 Sistema de Facturación
+# Sistema de Facturación
 
-Un sistema moderno y elegante para la gestión de facturas, clientes y productos, construido con Next.js 15, TypeScript, Tailwind CSS y Supabase.
+Sistema completo de facturación y gestión de clientes desarrollado con Next.js, React, TypeScript y Supabase.
 
-## ✨ Características
+## 🚀 Características
 
-- **Dashboard en tiempo real** con estadísticas actualizadas automáticamente
-- **Gestión de clientes** completa con información de contacto
-- **Catálogo de productos** con precios, IVA y unidades
-- **Sistema de facturas** para generar documentos profesionales
-- **Interfaz moderna** con animaciones y diseño responsive
-- **Base de datos en la nube** con Supabase
-- **Actualizaciones en tiempo real** entre páginas
+- **Gestión de Clientes** - Añade, edita y organiza información de clientes
+- **Catálogo de Productos** - Administra productos y servicios con precios e IVA
+- **Generación de Facturas** - Crea facturas profesionales con números consecutivos
+- **Vista Previa** - Visualiza facturas antes de enviarlas
+- **Dashboard en Tiempo Real** - Estadísticas actualizadas automáticamente
+- **Base de Datos en la Nube** - Supabase para almacenamiento seguro
 
-## 🚀 Tecnologías utilizadas
+## 🛠️ Tecnologías
 
-- **Frontend**: Next.js 15, React 19, TypeScript
-- **Estilos**: Tailwind CSS 4, CSS Modules
-- **Base de datos**: Supabase (PostgreSQL)
-- **UI Components**: Radix UI, Lucide React
-- **Formularios**: React Hook Form, Zod
-- **Animaciones**: CSS Transitions, Framer Motion
+- **Frontend:** Next.js 15, React 19, TypeScript
+- **UI:** Tailwind CSS, Shadcn/ui
+- **Base de Datos:** Supabase (PostgreSQL)
+- **Autenticación:** Supabase Auth
+- **Despliegue:** Vercel (recomendado)
 
-## 📋 Requisitos previos
+## 📦 Instalación
 
-- Node.js 18+ 
-- npm o pnpm
-- Cuenta en Supabase
-
-## 🛠️ Instalación
-
-1. **Clona el repositorio**
-   ```bash
-   git clone https://github.com/tu-usuario/billing-system.git
-   cd billing-system
-   ```
-
-2. **Instala las dependencias**
-   ```bash
-   npm install
-   # o
-   pnpm install
-   ```
-
-3. **Configura Supabase**
-   - Crea un proyecto en [Supabase](https://supabase.com)
-   - Obtén tu URL y API Key
-   - Crea un archivo `.env.local` con:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_api_key_de_supabase
-   ```
-
-4. **Configura la base de datos**
-   - Ejecuta los scripts SQL en `scripts/` en tu base de datos de Supabase
-   - O crea las tablas manualmente según el esquema
-
-5. **Ejecuta el proyecto**
-   ```bash
-   npm run dev
-   # o
-   pnpm dev
-   ```
-
-## 🗄️ Estructura de la base de datos
-
-### Tabla: `products`
-- `id` (int, primary key)
-- `name` (text)
-- `description` (text)
-- `price` (decimal)
-- `tax_rate` (decimal)
-- `unit` (text)
-- `active` (boolean)
-- `created_at` (timestamp)
-
-### Tabla: `customers`
-- `id` (int, primary key)
-- `name` (text)
-- `email` (text)
-- `phone` (text)
-- `address` (text)
-- `tax_id` (text)
-- `created_at` (timestamp)
-
-### Tabla: `invoices`
-- `id` (int, primary key)
-- `customer_id` (int, foreign key)
-- `invoice_number` (text)
-- `issue_date` (date)
-- `due_date` (date)
-- `total_amount` (decimal)
-- `tax_amount` (decimal)
-- `status` (enum: draft, sent, paid, overdue)
-- `created_at` (timestamp)
-
-## 📁 Estructura del proyecto
-
-```
-billing-system/
-├── app/                    # App Router de Next.js
-│   ├── clientes/          # Página de gestión de clientes
-│   ├── facturas/          # Página de facturas
-│   ├── productos/         # Página de gestión de productos
-│   ├── globals.css        # Estilos globales
-│   ├── layout.tsx         # Layout principal
-│   └── page.tsx           # Dashboard principal
-├── components/             # Componentes reutilizables
-│   ├── ui/                # Componentes de UI base
-│   └── animated-counter.tsx
-├── lib/                   # Utilidades y configuración
-│   ├── supabase.ts        # Cliente y funciones de Supabase
-│   └── utils.ts           # Funciones utilitarias
-├── hooks/                 # Hooks personalizados
-├── public/                # Archivos estáticos
-└── scripts/               # Scripts SQL para la base de datos
+1. **Clona el repositorio:**
+```bash
+git clone https://github.com/jairoteran/billing-system.git
+cd billing-system
 ```
 
-## 🔧 Scripts disponibles
+2. **Instala las dependencias:**
+```bash
+npm install
+```
 
-- `npm run dev` - Ejecuta el servidor de desarrollo
-- `npm run build` - Construye la aplicación para producción
-- `npm run start` - Ejecuta la aplicación en modo producción
-- `npm run lint` - Ejecuta el linter
+3. **Configura las variables de entorno:**
+```bash
+cp env.example .env.local
+```
+Edita `.env.local` con tus credenciales de Supabase.
 
-## 🌟 Características destacadas
+4. **Configura la base de datos:**
+- Ejecuta el script `scripts/01-create-database-schema.sql` en Supabase
+- Opcional: Ejecuta `scripts/02-seed-sample-data.sql` para datos de ejemplo
 
-### Dashboard en tiempo real
-- Contadores animados con estadísticas actualizadas
-- Resumen de facturas, clientes y productos
-- Navegación rápida a todas las secciones
+5. **Ejecuta el proyecto:**
+```bash
+npm run dev
+```
 
-### Gestión de productos
-- CRUD completo de productos
-- Cálculo automático de precios e IVA
-- Estados activo/inactivo
-- Búsqueda y filtrado
+## 🔧 Configuración de Supabase
 
-### Gestión de clientes
-- Información completa de contacto
-- Validación de datos
-- Búsqueda por nombre, email o NIF
-- Historial de transacciones
+1. Crea un proyecto en [supabase.com](https://supabase.com)
+2. Obtén tu URL y clave anónima
+3. Configura las variables en `.env.local`:
+```env
+NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
+NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima
+```
 
-### Sistema de facturas
-- Generación de facturas profesionales
-- Selección de clientes y productos
-- Cálculo automático de totales
-- Estados de facturación
+## 📱 Uso
 
-## 🎨 Diseño y UX
-
-- **Diseño responsive** que funciona en todos los dispositivos
-- **Animaciones suaves** para una experiencia fluida
-- **Paleta de colores** profesional y accesible
-- **Iconografía** consistente con Lucide React
-- **Tipografía** legible y jerárquica
-
-## 🔒 Seguridad
-
-- Autenticación con Supabase Auth
-- Validación de datos en frontend y backend
-- Sanitización de inputs
-- Variables de entorno para credenciales
+- **Dashboard:** Vista general con estadísticas
+- **Clientes:** Gestión completa de clientes
+- **Productos:** Catálogo de productos y servicios
+- **Facturas:** Crear y gestionar facturas
+- **Nueva Factura:** Generador de facturas con vista previa
 
 ## 🚀 Despliegue
 
 ### Vercel (Recomendado)
-1. Conecta tu repositorio de GitHub
-2. Configura las variables de entorno
-3. Despliega automáticamente
+1. Conecta tu repositorio de GitHub a Vercel
+2. Configura las variables de entorno en Vercel
+3. ¡Listo! Tu aplicación estará en línea
 
-### Netlify
-1. Conecta tu repositorio
-2. Configura el build command: `npm run build`
-3. Configura las variables de entorno
+### Otros proveedores
+El proyecto es compatible con cualquier proveedor que soporte Next.js.
 
-### Otros
-- Cualquier plataforma que soporte Next.js
-- Asegúrate de configurar las variables de entorno
+## 📄 Licencia
 
-## 🤝 Contribuir
+Este proyecto es de código abierto bajo la licencia MIT.
 
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+## 👨‍💻 Desarrollador
 
-## 📝 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 🙏 Agradecimientos
-
-- [Next.js](https://nextjs.org/) por el framework
-- [Supabase](https://supabase.com/) por la base de datos
-- [Tailwind CSS](https://tailwindcss.com/) por los estilos
-- [Radix UI](https://www.radix-ui.com/) por los componentes
-- [Lucide](https://lucide.dev/) por los iconos
-
-## 📞 Soporte
-
-Si tienes alguna pregunta o problema:
-
-- Abre un issue en GitHub
-- Contacta en: [tu-email@ejemplo.com]
-- Documentación: [link-a-docs]
+**Jairo Teran**
+- Email: [jteran0901@gmail.com](mailto:jteran0901@gmail.com)
+- GitHub: [@jairoteran](https://github.com/jairoteran)
 
 ---
 
-**Desarrollado con ❤️ por [Tu Nombre]**
+⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub!
