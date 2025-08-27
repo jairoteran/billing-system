@@ -17,7 +17,6 @@ Sistema completo de facturación y gestión de clientes desarrollado con Next.js
 - **UI:** Tailwind CSS, Shadcn/ui
 - **Base de Datos:** Supabase (PostgreSQL)
 - **Autenticación:** Supabase Auth
-- **Despliegue:** Vercel (recomendado)
 
 ## 📦 Instalación
 
@@ -67,13 +66,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima
 
 ## 🚀 Despliegue
 
-### Vercel (Recomendado)
-1. Conecta tu repositorio de GitHub a Vercel
-2. Configura las variables de entorno en Vercel
-3. ¡Listo! Tu aplicación estará en línea
-
-### Otros proveedores
-El proyecto es compatible con cualquier proveedor que soporte Next.js.
+El proyecto es compatible con cualquier proveedor que soporte Next.js como Vercel, Netlify, Railway, etc.
 
 ## 📄 Licencia
 
