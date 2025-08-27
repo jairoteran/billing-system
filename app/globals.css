@@ -1,0 +1,200 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens for better visibility and modern design */
+  --background: #f9fafb; /* Light Gray for main background */
+  --foreground: #4b5563; /* Dark Gray for primary text */
+  --card: #ffffff; /* White for card backgrounds */
+  --card-foreground: #4b5563; /* Dark Gray for text within cards */
+  --popover: #ffffff; /* White for popover backgrounds */
+  --popover-foreground: #4b5563; /* Dark Gray for text within popovers */
+  --primary: #0891b2; /* Cyan-600 for primary actions/buttons */
+  --primary-foreground: #ffffff; /* White for text on primary buttons */
+  --secondary: #4b5563; /* Dark Gray for secondary actions */
+  --secondary-foreground: #ffffff; /* White for text on secondary buttons */
+  --muted: #f9fafb; /* Light Gray for muted text/backgrounds */
+  --muted-foreground: #6b7280; /* Medium Gray for muted text */
+  --accent: #84cc16; /* Lime Green for accents and highlights */
+  --accent-foreground: #ffffff; /* White for text on accent elements */
+  --destructive: #dc2626; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White for text on destructive buttons */
+  --border: #d1d5db; /* Gray for borders */
+  --input: #ffffff; /* White for input backgrounds */
+  --ring: #0891b2; /* Cyan-600 for focus rings */
+  --chart-1: #0891b2; /* Cyan-600 for chart color 1 */
+  --chart-2: #84cc16; /* Lime Green for chart color 2 */
+  --chart-3: #dc2626; /* Red for chart color 3 */
+  --chart-4: #4b5563; /* Dark Gray for chart color 4 */
+  --chart-5: #f59e0b; /* Yellow for chart color 5 */
+  --radius: 0.5rem; /* Rounded corners */
+  --sidebar: #ffffff; /* White for sidebar background */
+  --sidebar-foreground: #4b5563; /* Dark Gray for sidebar text */
+  --sidebar-primary: #0891b2; /* Cyan-600 for sidebar primary actions */
+  --sidebar-primary-foreground: #ffffff; /* White for text on sidebar actions */
+  --sidebar-accent: #84cc16; /* Lime Green for sidebar accents */
+  --sidebar-accent-foreground: #ffffff; /* White for text on sidebar accents */
+  --sidebar-border: #d1d5db; /* Gray for sidebar borders */
+  --sidebar-ring: #0891b2; /* Cyan-600 for focus rings in sidebar */
+}
+
+.dark {
+  --background: #111827;
+  --foreground: #f9fafb;
+  --card: #1f2937;
+  --card-foreground: #f9fafb;
+  --popover: #1f2937;
+  --popover-foreground: #f9fafb;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --secondary: #374151;
+  --secondary-foreground: #f9fafb;
+  --muted: #374151;
+  --muted-foreground: #9ca3af;
+  --accent: #84cc16;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: #374151;
+  --input: #374151;
+  --ring: #0891b2;
+  --chart-1: #0891b2;
+  --chart-2: #84cc16;
+  --chart-3: #dc2626;
+  --chart-4: #6b7280;
+  --chart-5: #f59e0b;
+  --sidebar: #1f2937;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #0891b2;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #84cc16;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #374151;
+  --sidebar-ring: #0891b2;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Updated gradient background with better colors */
+    background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Updated glassmorphism effects with better contrast */
+@layer utilities {
+  .glass-card {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #0891b2, #84cc16);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hover-lift {
+    transition: all 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  }
+
+  .animate-counter {
+    animation: countUp 2s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
