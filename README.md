@@ -2,7 +2,7 @@
 
 Sistema completo de facturación y gestión de clientes desarrollado con Next.js, React, TypeScript y Supabase.
 
-## 🚀 Características
+## Características
 
 - **Gestión de Clientes** - Añade, edita y organiza información de clientes
 - **Catálogo de Productos** - Administra productos y servicios con precios e IVA
@@ -11,14 +11,14 @@ Sistema completo de facturación y gestión de clientes desarrollado con Next.js
 - **Dashboard en Tiempo Real** - Estadísticas actualizadas automáticamente
 - **Base de Datos en la Nube** - Supabase para almacenamiento seguro
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **Frontend:** Next.js 15, React 19, TypeScript
 - **UI:** Tailwind CSS, Shadcn/ui
 - **Base de Datos:** Supabase (PostgreSQL)
 - **Autenticación:** Supabase Auth
 
-## 📦 Instalación
+## Instalación
 
 1. **Clona el repositorio:**
 ```bash
@@ -46,7 +46,7 @@ Edita `.env.local` con tus credenciales de Supabase.
 npm run dev
 ```
 
-## 🔧 Configuración de Supabase
+## Configuración de Supabase
 
 1. Crea un proyecto en [supabase.com](https://supabase.com)
 2. Obtén tu URL y clave anónima
@@ -56,7 +56,7 @@ NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
 NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima
 ```
 
-## 📱 Uso
+## Uso
 
 - **Dashboard:** Vista general con estadísticas
 - **Clientes:** Gestión completa de clientes
@@ -64,15 +64,15 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima
 - **Facturas:** Crear y gestionar facturas
 - **Nueva Factura:** Generador de facturas con vista previa
 
-## 🚀 Despliegue
+## Despliegue
 
 El proyecto es compatible con cualquier proveedor que soporte Next.js como Vercel, Netlify, Railway, etc.
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de código abierto bajo la licencia MIT.
 
-## 👨‍💻 Desarrollador
+## Desarrollador
 
 **Jairo Teran**
 - Email: [jteran0901@gmail.com](mailto:jteran0901@gmail.com)
@@ -80,4 +80,3 @@ Este proyecto es de código abierto bajo la licencia MIT.
 
 ---
 
-⭐ Si te gusta este proyecto, ¡dale una estrella en GitHub!
