@@ -1,82 +1,89 @@
-# Sistema de Facturación
+# Billing System
 
-Sistema completo de facturación y gestión de clientes desarrollado con Next.js, React, TypeScript y Supabase.
+A complete billing and customer management system built with Next.js, React, TypeScript, and Supabase.
 
-## Características
+## Features
 
-- **Gestión de Clientes** - Añade, edita y organiza información de clientes
-- **Catálogo de Productos** - Administra productos y servicios con precios e IVA
-- **Generación de Facturas** - Crea facturas profesionales con números consecutivos
-- **Vista Previa** - Visualiza facturas antes de enviarlas
-- **Dashboard en Tiempo Real** - Estadísticas actualizadas automáticamente
-- **Base de Datos en la Nube** - Supabase para almacenamiento seguro
+- **Customer Management** - Add, edit, and organize customer information
+- **Product Catalog** - Manage products and services with prices and VAT
+- **Invoice Generation** - Create professional invoices with sequential numbers
+- **Preview** - Preview invoices before sending them
+- **Real-Time Dashboard** - Automatically updated statistics
+- **Cloud Database** - Secure storage with Supabase
 
-## Tecnologías
+## Technologies
 
 - **Frontend:** Next.js 15, React 19, TypeScript
 - **UI:** Tailwind CSS, Shadcn/ui
-- **Base de Datos:** Supabase (PostgreSQL)
-- **Autenticación:** Supabase Auth
+- **Database:** Supabase (PostgreSQL)
+- **Authentication:** Supabase Auth
 
-## Instalación
+## Installation
 
-1. **Clona el repositorio:**
+1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/jairoteran/billing-system.git
 cd billing-system
 ```
 
-2. **Instala las dependencias:**
+2. **Install the dependencies:**
+
 ```bash
 npm install
 ```
 
-3. **Configura las variables de entorno:**
+3. **Configure the environment variables:**
+
 ```bash
 cp env.example .env.local
 ```
-Edita `.env.local` con tus credenciales de Supabase.
 
-4. **Configura la base de datos:**
-- Ejecuta el script `scripts/01-create-database-schema.sql` en Supabase
-- Opcional: Ejecuta `scripts/02-seed-sample-data.sql` para datos de ejemplo
+Edit `.env.local` with your Supabase credentials.
 
-5. **Ejecuta el proyecto:**
+4. **Set up the database:**
+
+- Run the `scripts/01-create-database-schema.sql` script in Supabase
+- Optional: Run `scripts/02-seed-sample-data.sql` to add sample data
+
+5. **Run the project:**
+
 ```bash
 npm run dev
 ```
 
-## Configuración de Supabase
+## Supabase Configuration
 
-1. Crea un proyecto en [supabase.com](https://supabase.com)
-2. Obtén tu URL y clave anónima
-3. Configura las variables en `.env.local`:
+1. Create a project at [supabase.com](https://supabase.com)
+2. Get your project URL and anonymous key
+3. Configure the variables in `.env.local`:
+
 ```env
-NEXT_PUBLIC_SUPABASE_URL=tu_url_de_supabase
-NEXT_PUBLIC_SUPABASE_ANON_KEY=tu_clave_anonima
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anonymous_key
 ```
 
-## Uso
+## Usage
 
-- **Dashboard:** Vista general con estadísticas
-- **Clientes:** Gestión completa de clientes
-- **Productos:** Catálogo de productos y servicios
-- **Facturas:** Crear y gestionar facturas
-- **Nueva Factura:** Generador de facturas con vista previa
+- **Dashboard:** Overview with statistics
+- **Customers:** Complete customer management
+- **Products:** Product and service catalog
+- **Invoices:** Create and manage invoices
+- **New Invoice:** Invoice generator with preview
 
-## Despliegue
+## Deployment
 
-El proyecto es compatible con cualquier proveedor que soporte Next.js como Vercel, Netlify, Railway, etc.
+The project is compatible with any provider that supports Next.js, such as Vercel, Netlify, Railway, and others.
 
-## Licencia
+## License
 
-Este proyecto es de código abierto bajo la licencia MIT.
+This project is open source and available under the MIT License.
 
-## Desarrollador
+## Developer
 
 **Jairo Teran**
+
 - Email: [jteran0901@gmail.com](mailto:jteran0901@gmail.com)
 - GitHub: [@jairoteran](https://github.com/jairoteran)
 
 ---
-
